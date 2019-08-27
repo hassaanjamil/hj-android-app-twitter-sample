@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">hTwitter-sample-application</string>
+    <string name="please_wait">Please wait</string>
+    <string name="logout">Logout</string>
+</resources>
