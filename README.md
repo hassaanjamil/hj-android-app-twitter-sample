@@ -24,7 +24,7 @@ You need to:
                 "YOUR_TWITTER_SECRET_KEY");
      }
 ```
-2. Download google-services.json file from firebase and put it to the app module's directory of the sample project, using Firebase Authentication as instructed in section [Firebase configurations for android application - Firebase authentication](https://github.com/hassaanjamil/hTwitterAndroidSampleApplication/blob/master/README.md#setup-twitter-account-and-creating-an-app-on-twitter)
+2. Download config file **google-services.json** from firebase and put it to the app module's directory of the sample project, using Firebase Authentication as instructed in section [Firebase configurations for android application - Firebase authentication](https://github.com/hassaanjamil/hTwitterAndroidSampleApplication/blob/master/README.md#setup-twitter-account-and-creating-an-app-on-twitter)
 3. Build/Run the Android Sample Project and enjoy! :)
 
 ### Setup Twitter account and creating an app on twitter
