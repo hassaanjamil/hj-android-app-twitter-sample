@@ -1,4 +1,4 @@
-# hTwitterAndroidSampleApplicationProject
+# Twitter Sample Android Application Project + Guide
 
 ## Overview
 An android sample application project having sample implementation of Login with Twitter through Firebase Authentication, created on August 27, 2019.
@@ -7,13 +7,24 @@ An android sample application project having sample implementation of Login with
 
 ## Sample Application Previews
 <p float="left">
- <img src="screenshots/home.png" width="150" />
- <img src="screenshots/twitter-app.png" width="150" /> 
+ <img src="screenshots/home.png" width="200" />
+ <img src="screenshots/twitter-app.png" width="200" /> 
 </p>
 
-## To Run this sample code you need to:
-1. Copy your twitter app's API Key and Secret Key to the code, by [Setup Twitter account and creating an app on twitter](https://github.com/hassaanjamil/hTwitterAndroidSampleApplication/blob/master/README.md#setup-twitter-account-and-creating-an-app-on-twitter)
-2. Download google-services.json file from firebase and put it to the app module's directory of this sample project, by making [Firebase configurations for android application - Firebase authentication](https://github.com/hassaanjamil/hTwitterAndroidSampleApplication/blob/master/README.md#setup-twitter-account-and-creating-an-app-on-twitter)
+## To Run this sample code:
+You need to:
+1. Copy your twitter app's **API Key** and **Secret Key** to the code ([MainActivity.java](https://github.com/hassaanjamil/hTwitterAndroidSampleApplication/blob/master/app/src/main/java/com/hassanjamil/htwitter_sample_application/activities/MainActivity.java)), using Twitter Developer account as instructed in section [Setup Twitter account and creating an app on twitter](https://github.com/hassaanjamil/hTwitterAndroidSampleApplication/blob/master/README.md#setup-twitter-account-and-creating-an-app-on-twitter), and paste here in this code snippet replacing **"YOUR-TWITTER_API_KEY"** & **"YOUR_TWITTER_SECRET_KEY"** sample strings.
+```java
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        helper = new TwitterHelper(this, this);
+        helper.init("YOUR-TWITTER_API_KEY",
+                "YOUR_TWITTER_SECRET_KEY");
+     }
+```
+2. Download google-services.json file from firebase and put it to the app module's directory of the sample project, using Firebase Authentication as instructed in section [Firebase configurations for android application - Firebase authentication](https://github.com/hassaanjamil/hTwitterAndroidSampleApplication/blob/master/README.md#setup-twitter-account-and-creating-an-app-on-twitter)
 3. Build/Run the Android Sample Project and enjoy! :)
 
 ### Setup Twitter account and creating an app on twitter
@@ -63,3 +74,5 @@ An android sample application project having sample implementation of Login with
 ![Alt text](screenshots/18.jpg?raw=true "Screenshot")
 14. You can have Debug SHA-1 from your android studio, selecting gradle tab, then ":app>>Tasks>>android then right-click on signingReport option and Run the script in console output you will find SHA-1 as shown:<br/>
 ![Alt text](screenshots/19.jpg?raw=true "Screenshot")
+
+> You can also integrate twitter in your application project using necessary configurations made in the sample project.
