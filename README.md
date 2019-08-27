@@ -12,14 +12,14 @@ An android sample application project having sample implementation of Login with
 </p>
 
 ## To Run this sample code you need to:
-1. Copy your twitter app's API Key and Secret Key to the code, by [Setup Twitter account and creating an app on twitter] ()
-2. Download google-services.json file from firebase and put it to the app module's directory of this sample project, by making [Firebase configurations for android application - Firebase authentication] ()
+1. Copy your twitter app's API Key and Secret Key to the code, by [Setup Twitter account and creating an app on twitter](https://github.com/hassaanjamil/hTwitterAndroidSampleApplication/blob/master/README.md#setup-twitter-account-and-creating-an-app-on-twitter)
+2. Download google-services.json file from firebase and put it to the app module's directory of this sample project, by making [Firebase configurations for android application - Firebase authentication](https://github.com/hassaanjamil/hTwitterAndroidSampleApplication/blob/master/README.md#setup-twitter-account-and-creating-an-app-on-twitter)
 3. Build/Run the Android Sample Project and enjoy! :)
 
 ### Setup Twitter account and creating an app on twitter
-1. Go to [Twitter Developer Account] (https://developer.twitter.com/en/apps)
+1. Go to [Twitter Developer Account](https://developer.twitter.com/en/apps)
 2. Sign up and request to Twitter for your Developer account
-3. When successfully create a developer account you will have a dashboard as below by clicking the [link] (https://developer.twitter.com/en/apps) <br/>
+3. When successfully created a developer account you will have a dashboard as screenshot below by clicking the [link](https://developer.twitter.com/en/apps) <br/>
 ![Alt text](screenshots/5.jpg?raw=true "Screenshot")
 4. Click "Create an app" button to create a twitter application<br/>.
 ![Alt text](screenshots/6.jpg?raw=true "Screenshot")
@@ -37,7 +37,7 @@ An android sample application project having sample implementation of Login with
 ![Alt text](screenshots/9.jpg?raw=true "Screenshot")
 
 ### Firebase account configurations for android application (Firebase authentication)
-1. Go to [Firebase Console] (https://console.firebase.google.com/)
+1. Go to [Firebase Console](https://console.firebase.google.com/)
 2. Click Add Project, name your project, and click Continue.
 ![Alt text](screenshots/1.jpg?raw=true "Screenshot")
 3. Setup Google Analytics for your project or select "Not now" option and click "Create Project"
