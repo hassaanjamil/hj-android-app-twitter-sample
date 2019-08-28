@@ -11,15 +11,11 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.security.ProviderInstaller;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.TwitterAuthProvider;
 import com.hassanjamil.htwitter_sample_application.R;
-
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.DefaultLogger;
 import com.twitter.sdk.android.core.Result;
@@ -35,6 +31,12 @@ import java.security.NoSuchAlgorithmException;
 
 import javax.net.ssl.SSLContext;
 
+/**
+ * Initialize the {@link TwitterHelper} instance helper with
+ * {@link TwitterHelper#init(String, String)} method before calling setContentView in on create
+ * so that {@link com.twitter.sdk.android.core.identity.TwitterLoginButton} set to enable
+ * state because of pre-initialization
+ */
 public class TwitterHelper {
 
     private Activity mActivity;
@@ -119,31 +121,28 @@ public class TwitterHelper {
         Log.d(TAG, "handleTwitterSession:" + session);
 
         final MaterialDialog mProgressDialog = createProgressDialog(mActivity, null,
-                        mActivity.getString(R.string.please_wait), false, true);
+                mActivity.getString(R.string.please_wait), false, true);
 
         AuthCredential credential = TwitterAuthProvider.getCredential(
                 session.getAuthToken().token,
                 session.getAuthToken().secret);
 
         mAuth.signInWithCredential(credential)
-                .addOnCompleteListener(mActivity, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@androidx.annotation.NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "signInWithCredential:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            if (mTwitterCallback != null)
-                                mTwitterCallback.onSuccess(user);
+                .addOnCompleteListener(mActivity, task -> {
+                    if (task.isSuccessful()) {
+                        // Sign in success, update UI with the signed-in user's information
+                        Log.d(TAG, "signInWithCredential:success");
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        if (mTwitterCallback != null)
+                            mTwitterCallback.onSuccess(user);
 
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "signInWithCredential:failure", task.getException());
-                            if (mTwitterCallback != null)
-                                mTwitterCallback.onFailure(task.getException());
-                        }
-                        mProgressDialog.hide();
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Log.w(TAG, "signInWithCredential:failure", task.getException());
+                        if (mTwitterCallback != null)
+                            mTwitterCallback.onFailure(task.getException());
                     }
+                    mProgressDialog.hide();
                 });
     }
 
@@ -167,7 +166,7 @@ public class TwitterHelper {
     }
 
     private MaterialDialog createProgressDialog(Context context, String title, String text,
-                                                      boolean cancelable, boolean show) {
+                                                boolean cancelable, boolean show) {
 
         MaterialDialog.Builder progressDialogBuilder = new MaterialDialog.Builder(context);
 
@@ -185,12 +184,7 @@ public class TwitterHelper {
             materialDialog.on(context.getString(R.string.cancel), listener);*/
 
         if (cancelable) {
-            materialDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-                @Override
-                public void onCancel(DialogInterface dialogInterface) {
-                    dialogInterface.dismiss();
-                }
-            });
+            materialDialog.setOnCancelListener(DialogInterface::dismiss);
         }
 
         if (show && !materialDialog.isShowing())

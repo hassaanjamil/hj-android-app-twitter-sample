@@ -1,5 +1,10 @@
 <resources>
-    <string name="app_name">hTwitter-sample-application</string>
-    <string name="please_wait">Please wait</string>
-    <string name="logout">Logout</string>
+    <string name="app_name" translatable="false">hTwitter-sample-application</string>
+    <string name="please_wait" translatable="false">Please wait</string>
+    <string name="logout" translatable="false">Logout</string>
+    <string name="image" translatable="false">Image</string>
+    <string name="login_with_default_twitterloginbutton" translatable="false">
+        Login with Default TwitterLoginButton</string>
+    <string name="login_with_custom_twitterloginbutton" translatable="false">
+        Login with Custom TwitterLoginButton</string>
 </resources>

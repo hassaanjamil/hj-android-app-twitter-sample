@@ -4,26 +4,98 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.MainActivity"
-    android:gravity="center">
+    android:padding="20dp"
+    tools:context=".activities.MainActivity">
 
-    <com.twitter.sdk.android.core.identity.TwitterLoginButton
-        android:id="@+id/twitterLoginButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <com.hassanjamil.htwitter_sample_application.views.MyTwitterLoginButton
-        android:id="@+id/myTwitterLoginButton"
-        android:layout_width="47dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="10dp"/>
-
-    <Button
+    <ImageView
         android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:text="@string/logout"
-        android:layout_marginTop="30dp"/>
+        android:padding="10dp"
+        android:src="@drawable/ic_logout"
+        android:contentDescription="@string/logout"
+        android:layout_gravity="end"
+        android:layout_marginStart="15dp"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login_with_default_twitterloginbutton" />
+
+        <com.twitter.sdk.android.core.identity.TwitterLoginButton
+            android:id="@+id/twitterLoginButton"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/login_with_custom_twitterloginbutton" />
+
+        <com.hassanjamil.htwitter_sample_application.views.MyTwitterLoginButton
+            android:id="@+id/myTwitterLoginButton"
+            android:layout_width="47dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp" />
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cvUser"
+        android:layout_marginTop="50dp">
+
+        <LinearLayout
+            android:id="@+id/llUserItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ivUser"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:contentDescription="@string/image" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp">
+
+                <TextView
+                    android:id="@+id/tvUserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvUserEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tvUserUid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvUserProfileImageUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp" />
 
 </LinearLayout>
