@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity implements TwitterHelper.Twi
 
         helper = new TwitterHelper(this, this);
         // initialize with API KEY and SECRET KEY to enable TwitterLoginButton
-        helper.init("4KXMADJSoMZN2zpekOehuF9Ro",
-                "gTG2tgqKVFXFDKJHYssM75cxohhDzV1oCvcIEZYV3AfwTI0tUz");
+        helper.init("YOUR_CONSUMER_API_KEY",
+                "YOUR_CONSUMER_SECRET_KEY");
 
         setContentView(R.layout.activity_main);
 
