@@ -8,7 +8,8 @@ An android sample application project having sample implementation of Login with
 ## Sample Application Previews
 <p float="left">
  <img src="screenshots/home.png" width="200" />
- <img src="screenshots/twitter-app.png" width="200" /> 
+ <img src="screenshots/twitter-app.png" width="200" />
+ <img src="screenshots/success.png" width="200" />
 </p>
 
 ## To Run this sample code:
