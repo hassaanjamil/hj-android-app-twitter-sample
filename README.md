@@ -38,7 +38,7 @@ You need to:
 6. Check "Enable Sign in with Twitter" option
 7. Add callback url **twittersdk://**
 8. Add "Tell us how this app will be used field" with your desired description, I have added the description mentioned below:
- "Application will be used only to get twitter user login information to manage user accounts and provide them ease with logging in through twitter in our - application."
+ "Application will be used only to get twitter user login information to manage user accounts and provide them ease with logging in through twitter in our application."
 9. Fill "Terms of Service Url" and "Privacy policy Url" field.<br/>
 ![Alt text](screenshots/7.jpg?raw=true "Screenshot")
 10. Click "Create" button
@@ -70,7 +70,7 @@ You need to:
 ![Alt text](screenshots/15.jpg?raw=true "Screenshot")
 12. Put your application package name (**com.hassanjamil.hTwitterSample** in this case), nick, and your SHA-1 and Register App as in screenshot below:<br/>
 ![Alt text](screenshots/17.jpg?raw=true "Screenshot")
-13. After, Download the config file (google-services.json) and paste in your app module directory as shown below:<br/>
+13. After, Download the config file (**google-services.json**) and paste in your app module directory as shown below:<br/>
 ![Alt text](screenshots/18.jpg?raw=true "Screenshot")
 14. You can have Debug SHA-1 from your android studio, selecting gradle tab, then ":app>>Tasks>>android then right-click on signingReport option and Run the script in console output you will find SHA-1 as shown:<br/>
 ![Alt text](screenshots/19.jpg?raw=true "Screenshot")
